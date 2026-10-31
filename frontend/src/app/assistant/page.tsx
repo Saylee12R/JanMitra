@@ -60,28 +60,35 @@ export default function AssistantPage() {
         message: msg,
         user_profile: profile || undefined,
       });
-      setConversationId(res.conversation_id);
+      if (res?.conversation_id) {
+        setConversationId(res.conversation_id);
+      }
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: res.reply,
-          sources: res.sources,
-          disclaimer: res.disclaimer,
+          content: res?.reply || 'I processed your inquiry, but no content was returned. Please try asking again.',
+          sources: Array.isArray(res?.sources) ? res.sources : [],
+          disclaimer: res?.disclaimer,
           timestamp: new Date(),
         },
       ]);
-    } catch {
+    } catch (err: unknown) {
+      const errorMessage =
+        err instanceof Error && err.message
+          ? `Could not reach assistant: ${err.message}`
+          : 'I encountered an error connecting to the backend. Please make sure the JanMitra backend is running on port 8000.';
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: 'I encountered an error connecting to the backend. Please make sure the JanMitra backend is running on port 8000.',
+          content: errorMessage,
           timestamp: new Date(),
         },
       ]);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

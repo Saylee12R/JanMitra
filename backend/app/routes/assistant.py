@@ -74,12 +74,17 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
             Message.conversation_id == conversation_id
         ).order_by(Message.created_at.asc()).limit(20).all()
     ]
-
+    logger.info(
+    "CHAT HISTORY DEBUG: conversation_id=%s, history=%s",
+    conversation_id,
+    [(m["role"], m["content"]) for m in history]
+)
     # Grounded RAG retrieval from verified database
     scheme_data = retrieve_relevant_schemes(
         query=data.message,
         db=db,
         user_profile=data.user_profile,
+        conversation_history=history,
         limit=5,
     )
 
@@ -106,8 +111,19 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
     db.add(assistant_msg)
     db.commit()
 
-    sources = [s["official_source_url"] for s in scheme_data if s.get("official_source_url")]
-    # Deduplicate sources preserving order
+    # Strictly filter sources to the scheme(s) actually discussed
+    from app.ai.intent import detect_intent, INTENT_COMPARISON, is_ambiguous_query
+
+    sources = []
+    if scheme_data and not is_ambiguous_query(data.message, scheme_data):
+        intent = detect_intent(data.message, len(scheme_data))
+        if intent == INTENT_COMPARISON and len(scheme_data) >= 2:
+            sources = [s.get("official_source_url") for s in scheme_data[:2] if s.get("official_source_url")]
+        else:
+            primary_url = scheme_data[0].get("official_source_url")
+            if primary_url:
+                sources = [primary_url]
+
     unique_sources = list(dict.fromkeys(sources))
 
     return ChatResponse(
