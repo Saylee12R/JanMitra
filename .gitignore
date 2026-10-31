@@ -64,3 +64,4 @@ postgres_data/
 .venv/
 .mypy_cache/
 .ruff_cache/backend/*.db*
+backend/*.db*

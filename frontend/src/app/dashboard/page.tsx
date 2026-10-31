@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RecommendationItem, Application, SavedScheme } from '@/types';
-import { getRecommendations, getApplications, getSavedSchemes } from '@/lib/api';
+import { getRecommendations, getApplications, getSavedSchemes, updateApplication } from '@/lib/api';
 import { getStoredProfile, getStoredUserId, isProfileComplete } from '@/lib/store';
 
 export default function DashboardPage() {
@@ -35,6 +35,17 @@ export default function DashboardPage() {
     ready_to_apply: { label: 'Ready to Apply', color: 'bg-blue-100 text-blue-700' },
     applied: { label: 'Applied', color: 'bg-purple-100 text-purple-700' },
     completed: { label: 'Completed', color: 'bg-green-100 text-green-700' },
+  };
+
+  const handleStatusChange = async (appId: number, newStatus: string) => {
+    try {
+      await updateApplication(appId, userId, { status: newStatus });
+      setApplications((prev) =>
+        prev.map((a) => (a.id === appId ? { ...a, status: newStatus as Application['status'] } : a))
+      );
+    } catch {
+      // Graceful fallback
+    }
   };
 
   if (loading) {
@@ -155,9 +166,21 @@ export default function DashboardPage() {
                 return (
                   <div key={app.id} className="glass-card p-4">
                     <p className="font-semibold text-sm text-gray-900 truncate">{app.scheme?.name || `Scheme #${app.scheme_id}`}</p>
-                    <div className="flex items-center justify-between mt-2">
-                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${st.color}`}>{st.label}</span>
-                      <Link href={`/checklist?scheme_id=${app.scheme_id}`} className="text-xs text-[#0F52BA] hover:underline">Checklist →</Link>
+                    <div className="flex flex-wrap items-center justify-between mt-3 gap-2">
+                      <select
+                        value={app.status}
+                        onChange={(e) => handleStatusChange(app.id, e.target.value)}
+                        className="text-xs px-2.5 py-1 rounded-lg border border-gray-200 bg-white text-gray-700 focus:ring-1 focus:ring-blue-500 outline-none cursor-pointer"
+                      >
+                        <option value="interested">Interested</option>
+                        <option value="documents_pending">Documents Pending</option>
+                        <option value="ready_to_apply">Ready to Apply</option>
+                        <option value="applied">Applied (Self-reported)</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                      <Link href={`/checklist?scheme_id=${app.scheme_id}`} className="text-xs text-[#0F52BA] hover:underline shrink-0">
+                        Checklist →
+                      </Link>
                     </div>
                   </div>
                 );

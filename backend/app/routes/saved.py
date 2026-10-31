@@ -13,7 +13,19 @@ router = APIRouter(prefix="/api/saved", tags=["saved"])
 def _get_user(user_id: int, db: Session) -> User:
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        try:
+            user = User(id=user_id)
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+        except Exception:
+            db.rollback()
+            user = db.query(User).first()
+            if not user:
+                user = User()
+                db.add(user)
+                db.commit()
+                db.refresh(user)
     return user
 
 

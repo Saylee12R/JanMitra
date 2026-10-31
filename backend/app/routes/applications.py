@@ -18,8 +18,28 @@ STATUS_DISCLAIMER = (
 )
 
 
+def _get_or_create_user(user_id: int, db: Session) -> User:
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        try:
+            user = User(id=user_id)
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+        except Exception:
+            db.rollback()
+            user = db.query(User).first()
+            if not user:
+                user = User()
+                db.add(user)
+                db.commit()
+                db.refresh(user)
+    return user
+
+
 @router.get("", response_model=List[ApplicationResponse])
 def get_applications(user_id: int, db: Session = Depends(get_db)):
+    _get_or_create_user(user_id, db)
     apps = (
         db.query(Application)
         .options(joinedload(Application.scheme))
@@ -36,9 +56,7 @@ def create_application(
     data: ApplicationCreate,
     db: Session = Depends(get_db),
 ):
-    user = db.query(User).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+    _get_or_create_user(user_id, db)
 
     scheme = db.query(Scheme).filter(Scheme.id == data.scheme_id).first()
     if not scheme:

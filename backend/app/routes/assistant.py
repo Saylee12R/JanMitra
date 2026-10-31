@@ -1,4 +1,5 @@
 """AI Assistant API routes"""
+import logging
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -6,8 +7,31 @@ from app.database import get_db
 from app.models.models import Conversation, Message, Scheme, User, MessageRole
 from app.schemas.schemas import ChatRequest, ChatResponse
 from app.ai.assistant import get_ai_response
+from app.ai.retrieval import retrieve_relevant_schemes
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/assistant", tags=["assistant"])
+
+
+def _ensure_user_exists(user_id: int, db: Session) -> User:
+    """Ensure user exists in DB to prevent foreign key errors."""
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        try:
+            user = User(id=user_id)
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+        except Exception:
+            db.rollback()
+            user = db.query(User).first()
+            if not user:
+                user = User()
+                db.add(user)
+                db.commit()
+                db.refresh(user)
+    return user
 
 
 @router.post("/chat", response_model=ChatResponse)
@@ -21,11 +45,14 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
     - Cites only information from the official scheme database
     - Falls back gracefully if AI is unavailable
     """
+    # Ensure guest or provided user exists
+    user_id = data.user_id if data.user_id and data.user_id > 0 else 1
+    user = _ensure_user_exists(user_id, db)
+    user_id = user.id
+
     # Get or create conversation
     conversation_id = data.conversation_id
     if not conversation_id:
-        # For guest mode, user_id may be None – use a placeholder
-        user_id = data.user_id or 0
         conv = Conversation(user_id=user_id, title=data.message[:100])
         db.add(conv)
         db.commit()
@@ -34,7 +61,11 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
     else:
         conv = db.query(Conversation).filter(Conversation.id == conversation_id).first()
         if not conv:
-            raise HTTPException(status_code=404, detail="Conversation not found")
+            conv = Conversation(user_id=user_id, title=data.message[:100])
+            db.add(conv)
+            db.commit()
+            db.refresh(conv)
+            conversation_id = conv.id
 
     # Load conversation history
     history = [
@@ -44,35 +75,15 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
         ).order_by(Message.created_at.asc()).limit(20).all()
     ]
 
-    # Find relevant schemes for context (simple keyword search)
-    scheme_data = []
-    keywords = data.message.lower().split()
-    if keywords:
-        schemes = db.query(Scheme).filter(Scheme.active == True).limit(100).all()
-        relevant = []
-        for s in schemes:
-            score = 0
-            for kw in keywords:
-                if kw in s.name.lower() or kw in (s.description or "").lower():
-                    score += 1
-            if score > 0:
-                relevant.append((score, s))
-        relevant.sort(key=lambda x: x[0], reverse=True)
-        scheme_data = [
-            {
-                "name": s.name,
-                "category": s.category,
-                "ministry": s.ministry,
-                "description": s.description,
-                "benefits": s.benefits,
-                "documents": s.documents,
-                "application_url": s.application_url,
-                "official_source_url": s.official_source_url,
-            }
-            for _, s in relevant[:5]
-        ]
+    # Grounded RAG retrieval from verified database
+    scheme_data = retrieve_relevant_schemes(
+        query=data.message,
+        db=db,
+        user_profile=data.user_profile,
+        limit=5,
+    )
 
-    # Get AI response
+    # Get AI response (Gemini with grounded fallback)
     reply = await get_ai_response(
         message=data.message,
         conversation_history=history,
@@ -96,9 +107,15 @@ async def chat(data: ChatRequest, db: Session = Depends(get_db)):
     db.commit()
 
     sources = [s["official_source_url"] for s in scheme_data if s.get("official_source_url")]
+    # Deduplicate sources preserving order
+    unique_sources = list(dict.fromkeys(sources))
 
     return ChatResponse(
         conversation_id=conversation_id,
         reply=reply,
-        sources=sources[:3],
+        sources=unique_sources[:3],
+        disclaimer=(
+            "Information is retrieved from official government records. "
+            "Final eligibility and application status must be confirmed with the official scheme authority."
+        ),
     )

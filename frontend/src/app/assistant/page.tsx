@@ -14,9 +14,9 @@ interface Message {
 
 const SAMPLE_QUESTIONS = [
   'What is PM-KISAN? Am I eligible as a farmer?',
+  'पीएम किसान योजनेची पात्रता काय आहे? (मराठी)',
+  'आयुष्मान भारत योजना के क्या लाभ हैं? (हिन्दी)',
   'Which scholarships are available for college students?',
-  'What health schemes are available for BPL families?',
-  'How do I apply for Ayushman Bharat?',
   'What documents are needed for PM Ujjwala Yojana?',
 ];
 
