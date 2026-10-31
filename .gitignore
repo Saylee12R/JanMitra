@@ -63,4 +63,4 @@ postgres_data/
 # Additional Python cache
 .venv/
 .mypy_cache/
-.ruff_cache/
+.ruff_cache/backend/*.db*
