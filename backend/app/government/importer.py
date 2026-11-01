@@ -91,6 +91,8 @@ class SchemeImporter(GovernmentDataProvider):
             return []
 
         for f in sorted(self.data_dir.glob("*")):
+            if f.name.endswith("_backup.json"):
+               continue
             if f.suffix.lower() == ".json":
                 loaded = self.load_from_json(f)
                 logger.info(f"Loaded {len(loaded)} records from {f.name}")
