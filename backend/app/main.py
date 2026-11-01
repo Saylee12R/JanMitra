@@ -1,36 +1,72 @@
 """
 JanMitra Backend – FastAPI Application Entry Point
 """
+
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 
 from app.config import get_settings
 from app.database import Base, engine
-from app.routes import users, schemes, recommendations, saved, checklist, applications, compare, assistant
+from app.government.importer import SchemeImporter
+from app.routes import (
+    users,
+    schemes,
+    recommendations,
+    saved,
+    checklist,
+    applications,
+    compare,
+    assistant,
+)
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
 )
+
 logger = logging.getLogger(__name__)
 settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Create DB tables on startup."""
+    """Create DB tables and seed government schemes on startup."""
+
     logger.info("Starting JanMitra Backend...")
+
     try:
+        # Create database tables
         Base.metadata.create_all(bind=engine)
         logger.info("Database tables created/verified")
+
+        # Import verified scheme data from data/schemes/
+        try:
+            inserted, updated, errors = await asyncio.to_thread(
+                SchemeImporter().sync_to_database
+            )
+
+            logger.info(
+                f"Scheme data sync complete: "
+                f"{inserted} added, "
+                f"{updated} updated, "
+                f"{errors} errors"
+            )
+
+        except Exception as e:
+            logger.error(f"Scheme data import failed: {e}")
+
     except Exception as e:
         logger.error(f"Database connection error: {e}")
-        logger.warning("Starting without database connection – check DATABASE_URL")
+        logger.warning(
+            "Starting without database connection – check DATABASE_URL"
+        )
+
     yield
+
     logger.info("Shutting down JanMitra Backend")
 
 
@@ -48,7 +84,9 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+
 # ── CORS ──────────────────────────────────────────────────────────────────────
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins_list,
@@ -57,7 +95,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # ── Routes ────────────────────────────────────────────────────────────────────
+
 app.include_router(users.router)
 app.include_router(schemes.router)
 app.include_router(recommendations.router)
