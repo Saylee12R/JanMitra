@@ -1,62 +1,129 @@
 # JanMitra 🇮🇳
+### AI-Powered Government Scheme Discovery Assistant
 
-**AI-Powered Government Scheme Discovery Assistant**
+JanMitra is an AI-powered platform that helps citizens discover relevant Indian government schemes, understand eligibility criteria, and access scheme-related information through a conversational assistant.
 
-JanMitra helps citizens discover relevant Indian government schemes, understand eligibility criteria, and access scheme-related information through an AI-powered assistant.
+## 🌐 Live Demo
 
-## Features
+- **Live Website:** [JanMitra – Visit Website](https://jan-mitra-umber.vercel.app/)
+- **Project Demo Video:** [Watch JanMitra Demo](https://drive.google.com/file/d/1mo3AzGFegzeiCP4sg3B7I-OWJK11naoJ/view?usp=sharing)
 
-- AI-powered scheme assistance using natural language.
-- Government scheme discovery and recommendations.
-- Profile-based eligibility checking.
-- Scheme benefits and document information.
-- Save schemes, compare schemes, and application checklists.
+## ✨ Features
 
-## Tech Stack
+- **AI-Powered Assistant:** Ask questions about government schemes in natural language.
+- **Scheme Discovery:** Explore government schemes in one place.
+- **Eligibility Checking:** Check potential eligibility based on user profile information.
+- **Personalized Recommendations:** Discover schemes relevant to your profile.
+- **Scheme Details:** View benefits, eligibility criteria, required documents, and official links.
+- **Save Schemes:** Keep track of schemes you are interested in.
+- **Scheme Comparison:** Compare different schemes.
+- **Application Checklist:** Organize documents and application-related tasks.
+- **User Dashboard:** Access scheme-related information in one place.
 
-- **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS
-- **Backend:** Python, FastAPI, SQLAlchemy
-- **Database:** SQLite
-- **AI:** Google Gemini API
+## 🛠️ Tech Stack
 
-## Project Setup
+**Frontend**
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
 
-**1. Clone the repository**
+**Backend**
+- Python
+- FastAPI
+- SQLAlchemy
+
+**Database**
+- SQLite
+
+**AI**
+- Google Gemini API
+
+## 📁 Project Structure
+
+```text
+janmitra/
+├── backend/
+│   ├── app/
+│   │   ├── ai/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   └── database.py
+│   └── tests/
+│
+├── frontend/
+│   └── src/
+│       ├── app/
+│       └── components/
+│
+├── data/
+│   ├── schemes/
+│   └── seed/
+│
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/Saylee12R/JanMitra.git
 cd JanMitra
 ```
 
-**2. Start the backend**
+### 2. Backend Setup
+
 ```bash
 cd backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+Create a `.env` file inside the `backend` directory:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+DATABASE_URL=sqlite:///./janmitra.db
+```
+
+Start the backend:
+
+```bash
 uvicorn app.main:app --reload
 ```
 
-Configure your `backend/.env` with the required environment variables, including `GEMINI_API_KEY` and `DATABASE_URL`.
+Backend runs at `http://127.0.0.1:8000`.
 
-**3. Start the frontend** (in a new terminal)
+API documentation: `http://127.0.0.1:8000/docs`
+
+### 3. Frontend Setup
+
+Open a new terminal:
+
 ```bash
 cd frontend
 npm install
-npm run dev
 ```
 
-Configure `frontend/.env.local`:
+Create a `.env.local` file inside the `frontend` directory:
+
 ```env
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
 
-Open **http://localhost:3000** to use the application.
+Start the frontend:
 
-## API Documentation
+```bash
+npm run dev
+```
 
-When the backend is running: http://127.0.0.1:8000/docs
+Open `http://localhost:3000` in your browser.
 
-## Testing
+## 🧪 Running Tests
 
 ```bash
 cd backend
@@ -64,8 +131,20 @@ source venv/bin/activate
 pytest
 ```
 
-## Project Goal
+## ☁️ Deployment
 
-To make government welfare schemes easier to discover and understand, helping citizens access information about benefits, eligibility, and application requirements.
+- **Frontend:** Deployed on Vercel.
+- **Backend:** Deployed on Render.
 
-**Built with ❤️ for accessible public welfare information.**
+The deployed frontend communicates with the backend through the configured API URL.
+
+
+## 🎯 Project Goal
+
+JanMitra aims to bridge the information gap between citizens and government welfare schemes by making scheme discovery, eligibility understanding, and application preparation more accessible.
+
+**Making government schemes easier to discover, understand, and access.**
+
+---
+
+*Built with ❤️ for accessible public welfare information.*
