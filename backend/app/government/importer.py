@@ -25,8 +25,8 @@ logger = logging.getLogger(__name__)
 
 # Search paths for schemes data
 DATA_DIRS = [
-    Path(__file__).parent.parent.parent.parent / "data" / "schemes",
-    Path(__file__).parent.parent.parent / "data" / "schemes",
+    Path(__file__).resolve().parent.parent.parent / "data" / "schemes",
+    Path(__file__).resolve().parent.parent.parent.parent / "data" / "schemes",
     Path("data/schemes"),
 ]
 

@@ -11,7 +11,10 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["farmer", "agriculture"],
+    "occupation": [
+      "farmer",
+      "agriculture"
+    ],
     "category_requirement": null,
     "state": null,
     "education_requirement": null,
@@ -44,7 +47,12 @@
     "income_limit": null,
     "gender": "female",
     "occupation": null,
-    "category_requirement": ["SC", "ST", "OBC", "EWS"],
+    "category_requirement": [
+      "SC",
+      "ST",
+      "OBC",
+      "EWS"
+    ],
     "state": null,
     "education_requirement": null,
     "disability_required": null,
@@ -107,7 +115,11 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["street vendor", "hawker", "vendor"],
+    "occupation": [
+      "street vendor",
+      "hawker",
+      "vendor"
+    ],
     "category_requirement": null,
     "state": null,
     "education_requirement": null,
@@ -139,7 +151,18 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["carpenter", "blacksmith", "goldsmith", "potter", "weaver", "tailor", "cobbler", "mason", "artisan", "craftsperson"],
+    "occupation": [
+      "carpenter",
+      "blacksmith",
+      "goldsmith",
+      "potter",
+      "weaver",
+      "tailor",
+      "cobbler",
+      "mason",
+      "artisan",
+      "craftsperson"
+    ],
     "category_requirement": null,
     "state": null,
     "education_requirement": null,
@@ -171,7 +194,11 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["business", "entrepreneur", "self-employed"],
+    "occupation": [
+      "business",
+      "entrepreneur",
+      "self-employed"
+    ],
     "category_requirement": null,
     "state": null,
     "education_requirement": null,
@@ -204,10 +231,19 @@
     "max_age": null,
     "income_limit": 250000,
     "gender": "any",
-    "occupation": ["student"],
-    "category_requirement": ["SC"],
+    "occupation": [
+      "student"
+    ],
+    "category_requirement": [
+      "SC"
+    ],
     "state": null,
-    "education_requirement": ["post-matric", "graduate", "post-graduate", "diploma"],
+    "education_requirement": [
+      "post-matric",
+      "graduate",
+      "post-graduate",
+      "diploma"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "Full tuition fee reimbursement. Maintenance allowance: ₹1,200/month (hostellers) to ₹550/month (day scholars) for degree/post-graduate. Book allowance and study tour charges. Thesis printing charges for research scholars.",
@@ -239,10 +275,16 @@
     "max_age": null,
     "income_limit": 450000,
     "gender": "any",
-    "occupation": ["student"],
+    "occupation": [
+      "student"
+    ],
     "category_requirement": null,
     "state": null,
-    "education_requirement": ["undergraduate", "postgraduate", "12th pass"],
+    "education_requirement": [
+      "undergraduate",
+      "postgraduate",
+      "12th pass"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "₹10,000/year for first 3 years (UG). ₹20,000/year for 4th and 5th year (professional courses). ₹20,000/year for PG students.",
@@ -304,10 +346,16 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["entrepreneur", "self-employed", "business"],
+    "occupation": [
+      "entrepreneur",
+      "self-employed",
+      "business"
+    ],
     "category_requirement": null,
     "state": null,
-    "education_requirement": ["8th pass"],
+    "education_requirement": [
+      "8th pass"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "Subsidy: 15-35% of project cost. Maximum project: ₹50 lakh (manufacturing), ₹20 lakh (service). No collateral for loans up to ₹10 lakh under CGTMSE.",
@@ -465,10 +513,18 @@
     "max_age": null,
     "income_limit": 150000,
     "gender": "any",
-    "occupation": ["student"],
+    "occupation": [
+      "student"
+    ],
     "category_requirement": null,
     "state": null,
-    "education_requirement": ["8th pass", "9th grade", "10th grade", "11th grade", "12th grade"],
+    "education_requirement": [
+      "8th pass",
+      "9th grade",
+      "10th grade",
+      "11th grade",
+      "12th grade"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "₹12,000 per year (₹1,000 per month) via DBT. For students in Class 9-12. Renewable annually.",
@@ -499,10 +555,19 @@
     "max_age": null,
     "income_limit": 100000,
     "gender": "any",
-    "occupation": ["student"],
-    "category_requirement": ["OBC"],
+    "occupation": [
+      "student"
+    ],
+    "category_requirement": [
+      "OBC"
+    ],
     "state": null,
-    "education_requirement": ["post-matric", "graduate", "post-graduate", "diploma"],
+    "education_requirement": [
+      "post-matric",
+      "graduate",
+      "post-graduate",
+      "diploma"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "Maintenance allowance and reimbursement of fees. Varies by state and course. Book allowance included.",
@@ -533,10 +598,17 @@
     "max_age": null,
     "income_limit": 800000,
     "gender": "female",
-    "occupation": ["student"],
+    "occupation": [
+      "student"
+    ],
     "category_requirement": null,
     "state": null,
-    "education_requirement": ["undergraduate", "diploma", "engineering", "technical"],
+    "education_requirement": [
+      "undergraduate",
+      "diploma",
+      "engineering",
+      "technical"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "₹50,000/year for degree students. ₹30,000/year for diploma students. Covers tuition fee and incidental expenses. One girl per family.",
@@ -567,10 +639,17 @@
     "max_age": null,
     "income_limit": null,
     "gender": "any",
-    "occupation": ["student"],
+    "occupation": [
+      "student"
+    ],
     "category_requirement": null,
     "state": null,
-    "education_requirement": ["undergraduate", "diploma", "technical", "professional"],
+    "education_requirement": [
+      "undergraduate",
+      "diploma",
+      "technical",
+      "professional"
+    ],
     "disability_required": null,
     "marital_status_requirement": null,
     "benefits": "₹2,500/month for boys. ₹3,000/month for girls. For professional/technical degree courses (min 60% in qualifying exam).",
@@ -653,6 +732,321 @@
     "official_source_url": "https://wcd.nic.in/schemes/pradhan-mantri-matru-vandana-yojana",
     "source_name": "wcd.nic.in (Ministry of Women and Child Development)",
     "last_verified_at": "2024-01-15",
+    "active": true
+  },
+  {
+    "name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+    "slug": "pmfby",
+    "category": "Agriculture",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "department": "Department of Agriculture and Farmers Welfare",
+    "description": "Comprehensive seasonal crop insurance providing financial support and risk coverage against non-preventable natural risks from pre-sowing to post-harvest for farmers growing notified crops in notified areas.",
+    "detailed_description": "Pradhan Mantri Fasal Bima Yojana (PMFBY) is India's flagship crop insurance scheme. Enrolment is 100% voluntary for all farmers. For loanee farmers, coverage is applied automatically through their financing bank unless an explicit opt-out declaration is submitted in writing to the bank branch at least 7 days before the seasonal cutoff date. Non-loanee farmers apply voluntarily. Farmers pay a subsidized premium of 2% for Kharif food and oilseed crops, 1.5% for Rabi food and oilseed crops, and 5% for annual commercial/horticultural crops, with the remaining actuarial premium shared 50:50 between the Centre and States (90:10 in North Eastern states). Cutoff dates and notified crops are not universal fixed calendar dates; they are notified independently by each State Government per season per district.",
+    "min_age": 18,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "farmer",
+      "agriculture"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Comprehensive risk coverage across all crop stages: prevented sowing, standing crop damage (drought, flood, pest), post-harvest losses, and localized calamities. Farmer premium capped at 2% for Kharif, 1.5% for Rabi, and 5% for commercial/horticultural crops.",
+    "documents": [
+      "Aadhaar card",
+      "Land ownership documents / RoR (Record of Rights) / Land possession certificate",
+      "Tenancy agreement / Sowing declaration (for tenant and sharecropper farmers)",
+      "Bank passbook / Bank account details (Aadhaar-linked)",
+      "Sowing certificate / Crop details certified by Patwari/Village Revenue Officer"
+    ],
+    "application_process": "1. Verify whether your crop and district are notified for the current season on pmfby.gov.in. 2. Loanee farmers are enrolled automatically by their lending bank branch unless they submit a written opt-out declaration at least 7 days prior to the state-notified cutoff date. 3. Non-loanee farmers apply online via the National Crop Insurance Portal (pmfby.gov.in), Common Service Centres (CSCs), or bank branches before the state-notified seasonal cutoff date.",
+    "application_url": "https://pmfby.gov.in",
+    "official_source_url": "https://pmfby.gov.in",
+    "source_name": "pmfby.gov.in (Ministry of Agriculture and Farmers Welfare)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Gramin (PMAY-G)",
+    "slug": "pmay-gramin",
+    "category": "Housing",
+    "ministry": "Ministry of Rural Development",
+    "department": "Department of Rural Development",
+    "description": "Financial grant for rural houseless households and families living in 0, 1, or 2 room kutcha houses with basic amenities, identified through SECC and Awaas+ surveys verified by the Gram Sabha.",
+    "detailed_description": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G) provides non-refundable financial assistance to rural houseless households and those living in kutcha and dilapidated houses. Eligibility is not determined by general caste or category tags; it is determined through objective housing deprivation scores from the Socio-Economic and Caste Census (SECC 2011) and Awaas+ surveys verified by the local Gram Sabha. Households meeting any of the 10 automatic exclusion criteria (such as owning a motorized 3/4 wheeler, mechanized farm equipment, government employment, any family member earning over ₹15,000/month, income/professional tax payment, or land exceeding 2.5 acres irrigated / 5 acres unirrigated) are strictly disqualified.",
+    "min_age": 18,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": null,
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Direct grant of ₹1,20,000 in plain areas and ₹1,30,000 in hilly/difficult/Himalayan states and UTs transferred via DBT in installments linked to physical construction progress (foundation, lintel, roof). Entitled to 90–95 person-days of unskilled labor wages under rural employment schemes and ₹12,000 for toilet construction under Swachh Bharat Mission - Gramin.",
+    "documents": [
+      "Aadhaar card",
+      "Bank account details (linked with Aadhaar for DBT)",
+      "PMAY-G / Awaas+ registration ID or SECC household ID",
+      "Rural Job Card number",
+      "Land / site ownership document or Gram Panchayat allotment certificate",
+      "Affidavit affirming non-ownership of any pucca house in India"
+    ],
+    "application_process": "1. PMAY-G does not have an open public online signup form. Beneficiary lists are formulated through village Awaas+ administrative surveys verified and prioritized by the Gram Sabha. 2. Rural citizens can verify their name, registration status, and priority on the permanent waiting list via pmayg.nic.in or at their Gram Panchayat. 3. Upon administrative sanction, installments are disbursed directly via DBT after geo-tagged photographic inspection at each construction stage.",
+    "application_url": "https://pmayg.nic.in",
+    "official_source_url": "https://pmayg.nic.in",
+    "source_name": "pmayg.nic.in (Ministry of Rural Development)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "Viksit Bharat - Guarantee for Rozgar and Aajeevika Mission (Gramin) (VB-G RAM G)",
+    "slug": "vb-g-ram-g",
+    "category": "Social Security",
+    "ministry": "Ministry of Rural Development",
+    "department": "Department of Rural Development",
+    "description": "Statutory rural employment guarantee providing up to 125 days of wage employment per financial year to every rural household whose adult members volunteer for unskilled manual work, in force from 1 July 2026.",
+    "detailed_description": "The Viksit Bharat – Guarantee for Rozgar and Aajeevika Mission (Gramin) Act, 2025 (VB-G RAM G) came into force on 1 July 2026, succeeding and repealing the Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), 2005. The Act enhances the legal entitlement of wage employment from 100 days to 125 days per financial year per rural household. The entitlement is strictly at the household level. The framework focuses on four thematic pillars: water security, core rural infrastructure, livelihood-related assets, and extreme weather mitigation, planned through Viksit Gram Panchayat Plans (VGPPs) and monitored via biometric authentication, geo-referencing, and Direct Benefit Transfer (DBT).",
+    "min_age": 18,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "laborer",
+      "daily wage",
+      "worker",
+      "unemployed",
+      "rural worker",
+      "farmer"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Statutory legal entitlement to up to 125 days of unskilled manual wage employment per financial year per rural household. Wages paid at notified statutory wage rates directly to bank or post office accounts via DBT within 15 days. Entitled to statutory unemployment allowance if work is not allotted within 15 days of formal demand.",
+    "documents": [
+      "Aadhaar card",
+      "Proof of rural residence (Ration card / Voter ID / Gram Panchayat domicile certificate)",
+      "Passport-size photograph",
+      "Bank or Post Office account passbook (Aadhaar-seeded for DBT)",
+      "Existing Job Card (for re-validation/transition)"
+    ],
+    "application_process": "1. Job Card application and work demand submission are offline administrative processes handled at the local Gram Panchayat (the portal serves for reporting, tracking, and MIS, not consumer web forms). 2. Submit oral or written application for a Job Card at the Gram Panchayat; issued within 15 days. 3. Registered Job Card holders submit a written demand for work. 4. Work is allocated within 15 days within a 5 km radius of the village. Real-time status and wage lists are tracked on vbgramg.dord.gov.in.",
+    "application_url": "https://vbgramg.dord.gov.in",
+    "official_source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290638",
+    "source_name": "vbgramg.dord.gov.in (Ministry of Rural Development / PIB PRID=2290638)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS - NSAP)",
+    "slug": "nsap-ignoaps",
+    "category": "Social Security",
+    "ministry": "Ministry of Rural Development",
+    "department": "Department of Rural Development",
+    "description": "Monthly non-contributory social security pension for destitute senior citizens aged 60 and above belonging to Below Poverty Line (BPL) households.",
+    "detailed_description": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS) is a core component of the National Social Assistance Programme (NSAP) administered by the Ministry of Rural Development. Under the scheme, financial assistance is provided to elderly persons living in households officially certified as Below Poverty Line (BPL). The Central Government contributes ₹200 per month for persons aged 60 to 79 years and ₹500 per month for persons aged 80 years and above. Individual State Governments independently provide supplementary top-up pensions (typically ranging from ₹400 to over ₹2,000/month), making total monthly pension disbursements vary by state. All disbursements are made via DBT.",
+    "min_age": 60,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "retired",
+      "senior citizen",
+      "unemployed",
+      "laborer"
+    ],
+    "category_requirement": [
+      "BPL"
+    ],
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Direct monthly pension transferred via DBT. Central Government contribution: ₹200/month for beneficiaries aged 60–79 years; ₹500/month for beneficiaries aged 80 years and above. Total received monthly pension is higher based on independent State Government top-up allocations.",
+    "documents": [
+      "Aadhaar card",
+      "Age proof (Birth certificate / Voter ID card / School leaving certificate / Aadhaar)",
+      "BPL ration card or BPL certificate issued by competent authority",
+      "Bank or Post Office passbook (Aadhaar-seeded)",
+      "Passport-size photograph"
+    ],
+    "application_process": "1. Obtain and submit application form at the local Gram Panchayat / Block Development Office (rural areas) or Municipal Corporation / Urban Local Body office (urban areas), or apply online via the national UMANG platform or state social welfare portals. 2. Submit form along with age, BPL certification, and Aadhaar-seeded bank account proof. 3. Upon verification and sanction by district authorities, monthly pensions are disbursed via PFMS/DBT.",
+    "application_url": "https://nsap.nic.in",
+    "official_source_url": "https://nsap.nic.in",
+    "source_name": "nsap.nic.in (Ministry of Rural Development)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "PM-SYM (Pradhan Mantri Shram Yogi Maan-dhan)",
+    "slug": "pm-sym",
+    "category": "Social Security",
+    "ministry": "Ministry of Labour and Employment",
+    "department": "Department of Labour and Employment",
+    "description": "Voluntary and contributory pension scheme providing an assured monthly pension of ₹3,000 for unorganized sector workers with monthly income up to ₹15,000.",
+    "detailed_description": "Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM) is a Central Sector Scheme administered by the Ministry of Labour and Employment in partnership with LIC. Designed for unorganized sector workers (street vendors, domestic workers, rickshaw pullers, agricultural laborers, construction workers), beneficiaries in the age group of 18 to 40 years make monthly contributions between ₹55 and ₹200 depending on entry age, with an equal 50% matching contribution paid by the Central Government. The statutory income limit is strictly a monthly income of ₹15,000 or less (represented as an annual proxy of ₹1,80,000 in this database). Members of EPFO, ESIC, NPS, and income-tax payers are excluded.",
+    "min_age": 18,
+    "max_age": 40,
+    "income_limit": 180000.0,
+    "gender": "any",
+    "occupation": [
+      "unorganized worker",
+      "driver",
+      "domestic worker",
+      "street vendor",
+      "laborer",
+      "tailor",
+      "mechanic",
+      "construction worker",
+      "cobbler",
+      "carpenter"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Assured minimum monthly pension of ₹3,000 after reaching 60 years of age. In case of death during receipt of pension, spouse is entitled to 50% family pension (₹1,500/month). Central Government provides an equal 50% matching monthly contribution throughout the accumulation period.",
+    "documents": [
+      "Aadhaar card",
+      "Savings bank account / Jan Dhan account passbook with IFSC code",
+      "Mobile number linked to Aadhaar",
+      "Auto-debit consent mandate form"
+    ],
+    "application_process": "1. Visit the nearest Common Service Centre (CSC) or self-enroll on the official Maan-dhan portal (maandhan.in). 2. Provide Aadhaar number and bank account details. 3. System calculates monthly contribution based on age (₹55/month at age 18 up to ₹200/month at age 40). 4. Pay initial installment in cash (at CSC) or online, sign auto-debit mandate, and receive a unique Shram Yogi Pension Card.",
+    "application_url": "https://maandhan.in",
+    "official_source_url": "https://maandhan.in",
+    "source_name": "maandhan.in (Ministry of Labour and Employment)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "PM-KMY (Pradhan Mantri Kisan Maan-Dhan Yojana)",
+    "slug": "pm-kmy",
+    "category": "Agriculture",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "department": "Department of Agriculture and Farmers Welfare",
+    "description": "Old-age pension scheme providing an assured monthly pension of ₹3,000 to small and marginal farmers owning up to 2 hectares of cultivable land.",
+    "detailed_description": "Pradhan Mantri Kisan Maan-Dhan Yojana (PM-KMY) is a voluntary and contributory pension scheme for Small and Marginal Farmers (SMFs) owning cultivable land up to 2 hectares (5 acres). Implemented in partnership with LIC, farmers between 18 and 40 years of age make monthly contributions between ₹55 and ₹200 depending on entry age, with an equal matching contribution by the Central Government. Farmers can opt to have contributions deducted from PM-KISAN installments. Mandatory exclusions: institutional landholders, constitutional post holders, serving/retired government employees, income-tax payers, practicing professionals (doctors, engineers, lawyers, CAs), and beneficiaries of NPS, EPFO, ESIC, or PM-SYM are ineligible.",
+    "min_age": 18,
+    "max_age": 40,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "farmer",
+      "agriculture",
+      "small farmer"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Assured minimum monthly pension of ₹3,000 on attaining 60 years of age. 50% matching contribution paid by Central Government. Option for auto-debit of farmer's contribution directly from PM-KISAN DBT installments. 50% spouse family pension in the event of beneficiary's death.",
+    "documents": [
+      "Aadhaar card",
+      "Land ownership documents / Khasra-Khatauni records proving cultivable landholding up to 2 hectares",
+      "Bank account details (linked with Aadhaar)",
+      "PM-KISAN registration number (if opting for auto-debit from PM-KISAN)"
+    ],
+    "application_process": "1. Eligible farmers can enroll online via pmkmy.gov.in / maandhan.in or visit the nearest Common Service Centre (CSC). 2. Provide Aadhaar, bank passbook, and land ownership records. 3. Choose contribution mode (direct bank auto-debit or PM-KISAN installment deduction). 4. Upon verification, the Kisan Pension Card with unique Pension Account Number is generated.",
+    "application_url": "https://pmkmy.gov.in",
+    "official_source_url": "https://pmkmy.gov.in",
+    "source_name": "pmkmy.gov.in (Ministry of Agriculture and Farmers Welfare)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "NAPS-2 (National Apprenticeship Promotion Scheme Phase-2)",
+    "slug": "naps-apprenticeship",
+    "category": "Skill Development",
+    "ministry": "Ministry of Skill Development and Entrepreneurship",
+    "department": "Department of Skill Development and Entrepreneurship",
+    "description": "National scheme promoting industrial apprenticeship training through partial government stipend support of 25% (up to ₹1,500/month) directly to apprentices via DBT.",
+    "detailed_description": "National Apprenticeship Promotion Scheme Phase-2 (NAPS-2) promotes apprenticeship training across India by providing direct financial support to apprentices and incentivizing employers. The Government of India provides partial stipend support of 25% of the prescribed minimum stipend payable to the apprentice, subject to a ceiling of ₹1,500 per month per apprentice, directly transferred to the apprentice's Aadhaar-seeded bank account via Direct Benefit Transfer (DBT). The remaining stipend is paid by the employer. Candidates receive hands-on training and a recognized National Apprenticeship Certificate (NAC).",
+    "min_age": 14,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "student",
+      "graduate",
+      "apprentice",
+      "unemployed",
+      "technician"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": [
+      "5th pass",
+      "8th pass",
+      "10th pass",
+      "12th pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "Monthly stipend support: Government pays 25% of prescribed stipend up to a maximum cap of ₹1,500/month directly to apprentice's bank account via DBT during training. Recognized National Apprenticeship Certificate (NAC) issued by NCVET upon successful assessment.",
+    "documents": [
+      "Aadhaar card",
+      "Educational qualification certificate / Marksheets (10th/12th/ITI/Diploma/Degree)",
+      "Bank account details (Aadhaar-seeded for DBT)",
+      "Passport-size photograph"
+    ],
+    "application_process": "1. Register as a candidate on the official apprenticeship portal (apprenticeshipindia.gov.in). 2. Complete candidate e-KYC using Aadhaar and fill educational profile. 3. Browse apprenticeship opportunities posted by registered establishments. 4. Apply online for suitable vacancies. 5. Once selected, sign apprenticeship contract digitally on portal to initiate training and DBT stipend disbursement.",
+    "application_url": "https://www.apprenticeshipindia.gov.in",
+    "official_source_url": "https://www.apprenticeshipindia.gov.in",
+    "source_name": "apprenticeshipindia.gov.in (Ministry of Skill Development and Entrepreneurship)",
+    "last_verified_at": "2026-11-26",
+    "active": true
+  },
+  {
+    "name": "PM-MKSSY (Pradhan Mantri Matsya Kisan Samridhi Sah-Yojana)",
+    "slug": "pm-mkssy",
+    "category": "Agriculture",
+    "ministry": "Ministry of Fisheries, Animal Husbandry and Dairying",
+    "department": "Department of Fisheries",
+    "description": "Central Sector sub-scheme under PMMSY providing performance grants, digital work identities on NFDP, and aquaculture insurance subsidies for fisheries workers and micro-enterprises.",
+    "detailed_description": "Pradhan Mantri Matsya Kisan Samridhi Sah-Yojana (PM-MKSSY) is an independent Central Sector Sub-scheme implemented under the overarching umbrella of PMMSY for an operational duration from FY 2023-24 to FY 2026-27 with an outlay of ₹6,000 crore. The sub-scheme provides: (1) formal digital identities on the National Fisheries Digital Platform (NFDP) to facilitate credit; (2) a one-time aquaculture insurance premium incentive of 40% (up to ₹25,000/ha, max ₹1,00,000 per farmer for standard farms up to 4 ha; with an additional 10% bonus for SC, ST, and Women farmers); and (3) performance grants up to 25% (or ₹35 lakh) for general micro-enterprises and up to 35% (or ₹45 lakh) for SC/ST/Women-led entities adopting safety, quality, and supply-chain standards.",
+    "min_age": 18,
+    "max_age": null,
+    "income_limit": null,
+    "gender": "any",
+    "occupation": [
+      "fisherman",
+      "fisheries",
+      "aquaculture",
+      "fish farmer",
+      "fish vendor"
+    ],
+    "category_requirement": null,
+    "state": null,
+    "education_requirement": null,
+    "disability_required": null,
+    "marital_status_requirement": null,
+    "benefits": "One-time aquaculture insurance premium incentive: 40% of premium cost (up to ₹25,000/ha, max ₹1,00,000 per farmer) for standard farms up to 4 ha; additional 10% incentive for SC, ST, and Women beneficiaries. Performance grants up to 25%–35% of total investment for micro-enterprises creating jobs and upgrading quality/safety standards. Formal digital identity card on NFDP facilitating institutional credit access.",
+    "documents": [
+      "Aadhaar card",
+      "Digital identity registration on National Fisheries Digital Platform (NFDP)",
+      "Proof of land/water body ownership or lease agreement for aquaculture farm",
+      "Bank account details (linked with Aadhaar)",
+      "Aquaculture insurance policy document (for insurance incentive claim)",
+      "Udyam registration / Enterprise documents (for micro-enterprise performance grants)"
+    ],
+    "application_process": "1. Register as a fisher, fish farmer, vendor, or micro-enterprise on the National Fisheries Digital Platform (nfdp.dof.gov.in) to generate a unique digital identity. 2. Apply online for specific components (Aquaculture Insurance Incentive or Performance Grant) by uploading proof of farm operation or enterprise investment. 3. Applications are verified by state fisheries authorities and verified incentives are disbursed directly via DBT/PFMS.",
+    "application_url": "https://nfdp.dof.gov.in",
+    "official_source_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2003883",
+    "source_name": "nfdp.dof.gov.in (Department of Fisheries / PIB PRID=2003883)",
+    "last_verified_at": "2026-11-26",
     "active": true
   }
 ]
